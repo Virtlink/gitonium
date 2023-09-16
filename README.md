@@ -4,16 +4,15 @@
 [![coronium](https://img.shields.io/maven-metadata/v?label=gitonium&metadataUrl=https%3A%2F%2Fartifacts.metaborg.org%2Fcontent%2Frepositories%2Freleases%2Forg%2Fmetaborg%2Fgitonium%2Fmaven-metadata.xml)](https://mvnrepository.com/artifact/org.metaborg/gitonium?repo=metaborg-releases)
 
 # Gitonium
-
 Gitonium is a Gradle plugin for automatic versioning based on the current Git branch and/or tag.
 
-## Requirements
 
+## Requirements
 Gradle 5 or higher is required.
 The code snippets in this README assume you are using Gradle with Kotlin, but should be translatable to Groovy as well.
 
-## Prerequisites
 
+## Prerequisites
 The Gitonium plugin is not yet published to the Gradle plugins repository.
 Therefore, to enable downloading the plugin, add our repository to your settings.gradle(.kts) file:
 
@@ -25,8 +24,8 @@ pluginManagement {
 }
 ```
 
-## Applying the plugin
 
+## Applying the plugin
 Apply the gitonium plugin to a project (a build.gradle(.kts) file) as follows:
 
 ```kotlin
@@ -40,8 +39,8 @@ The latest version of the plugin can be found at the top of this readme.
 Gitonium will then lazily set the version of the project, and all sub-projects, to a version based on the Git repository.
 To override the version of a project, simply set the version as usual, and this will override the lazily set version.
 
-## Versioning
 
+## Versioning
 Gitonium will check the current directory for a Git repository.
 If none is found in that directory, it will check its parent directory for one, and so on.
 If no Git repository is found, the plugin fails.
@@ -58,24 +57,24 @@ If no release tag was found, and the HEAD is not on a branch, the version is not
 
 If the repository has no HEAD, Gitonium will fail.
 
-## Development
 
+## Development
 This section details the development of this project.
 
-### Building
 
+### Building
 This repository is built with Gradle, which requires a JDK of at least version 8 to be installed. Higher versions may work depending on [which version of Gradle is used](https://docs.gradle.org/current/userguide/compatibility.html).
 
 To build this repository, run `./gradlew buildAll` on Linux and macOS, or `gradlew buildAll` on Windows.
 
-### Automated Builds
 
+### Automated Builds
 All branches and tags of this repository are built on:
 - [GitHub actions](https://github.com/metaborg/gitonium/actions/workflows/build.yml) via `.github/workflows/build.yml`.
 - Our [Jenkins buildfarm](https://buildfarm.metaborg.org/view/Devenv/job/metaborg/job/gitonium/) via `Jenkinsfile` which uses our [Jenkins pipeline library](https://github.com/metaborg/jenkins.pipeline/).
 
-### Publishing
 
+### Publishing
 This repository is published via Gradle and Git with the [Gitonium](https://github.com/metaborg/gitonium) and [Gradle Config](https://github.com/metaborg/gradle.config) plugins.
 It is published to our [artifact server](https://artifacts.metaborg.org) in the [releases repository](https://artifacts.metaborg.org/content/repositories/releases/).
 
@@ -97,9 +96,9 @@ publish.repository.metaborg.artifacts.password=<password>
 Then run `./gradlew publishAll` to publish all built artifacts.
 You should also push the release tag you made such that this release is reproducible by others.
 
-## Copyright and License
 
-Copyright © 2018-2022 Delft University of Technology
+## Copyright and License
+Copyright © 2018-2023 Delft University of Technology
 
 The files in this repository are licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 You may use the files in this repository in compliance with the license.
