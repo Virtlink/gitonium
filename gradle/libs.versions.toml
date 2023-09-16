@@ -1,0 +1,15 @@
+[versions]
+# Plugins
+# Kotlin
+kotlin                          = "1.9.0"           # https://kotlinlang.org/
+gitonium-bootstrap              = "0.1.5"           # https://github.com/metaborg/gitonium
+
+jgit                            = "5.10.0.202012080955-r"   # https://eclipse.dev/jgit/
+
+
+[plugins]
+kotlin-jvm                      = { id = "org.jetbrains.kotlin.jvm",                                        version.ref = "kotlin" }
+gitonium-bootstrap              = { id = "org.metaborg.gitonium",                                           version.ref = "gitonium-bootstrap" }
+
+[libraries]
+jgit                            = { module = "org.eclipse.jgit:org.eclipse.jgit",                           version.ref = "jgit" }
